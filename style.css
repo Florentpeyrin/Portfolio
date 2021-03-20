@@ -127,17 +127,6 @@ section {
   mix-blend-mode: difference;
 }
 
-.scrolldown {
-  height: 40px;
-  width: 40px;
-  position: absolute;
-  left: 50%;
-  bottom: 20px;
-  transform: translateY(-80px) translateX(-50%) rotate(45deg);
-  border-radius: 50px;
-  cursor: pointer;
-}
-
 .angle {
   position: fixed;
   height: 40px;
@@ -155,34 +144,6 @@ section {
   height: 100%;
   border-bottom: 2px solid white;
   border-right: 2px solid white;
-}
-
-.scrolldown span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-bottom: 2px solid white;
-  border-right: 2px solid white;
-  animation: animate 1.5s linear infinite;
-  opacity: 0;
-}
-
-.scrolldown span:nth-child(1) {
-  transform: translate(-15px,-15px);
-  animation-delay: -0.4s;
-}
-
-.scrolldown span:nth-child(2) {
-  transform: translate(0,0);
-  animation-delay: -0.2s;
-}
-
-.scrolldown span:nth-child(3) {
-  transform: translate(15px,15px);
-  animation-delay: 0s;
 }
 
 @keyframes animate {
@@ -301,11 +262,6 @@ section {
   .column {
     width: 100%;
     padding-right: 50px;
-  }
-
-  .scrolldown {
-    height: 20px;
-    width: 20px;
   }
 
   .left {
