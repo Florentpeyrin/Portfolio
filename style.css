@@ -231,15 +231,6 @@ section {
 }
 
 .wave {
-  /* overflow: clip;
-  width: 1000px;
-  height: 1000px;
-  z-index: 0;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transform: scale(200%); */
-
   display: inline-block;
   position: absolute;
   top: 0;
@@ -258,7 +249,6 @@ section {
     justify-content: center;
   }
   nav .links {
-    /* background-color: #0f0f0f; */
     float: none;
     position: fixed;
     z-index: 9;
@@ -272,6 +262,8 @@ section {
     justify-content: space-evenly;
     overflow: hidden;
     transition: all .5s ease-in-out;
+    background-color: #000000;
+    opacity: 1;
   }
 
   nav .links a {
@@ -306,5 +298,9 @@ section {
   .scrolldown {
     height: 20px;
     width: 20px;
+  }
+
+  .binary {
+    font-size: 15px;
   }
 }

@@ -13,6 +13,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fauna+One&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
   <!-- Animations -->
   <link rel="stylesheet" href="animate.css">
   <script src="wow.min.js"></script>
@@ -26,17 +28,17 @@
 <body>
   <div class="cursor"></div>
   <nav>
-    <input id="nav-toggle" type="checkbox">
-    <div class="logo wow fadeInDown" data-wow-duration="2s" data-wow-delay="2s">
+    <input id="nav-toggle" type="checkbox" onchange="valueChanged()">
+    <div class="hover-me logo wow fadeInDown" data-wow-duration="2s" data-wow-delay="2s">
       <h4 class="clickable" onclick="window.location.reload();">FP.</h4>
     </div>
-    <ul class=" links">
-      <li class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="2.5s"><a href="#projets">Projets</a></li>
-      <li class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="2.6s"><a href="#competences">Compétences</a></li>
-      <li class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="2.7s"><a href="#parcours">Parcours</a></li>
-      <li class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="2.8s"><a href="#contact">Contact</a></li>
+    <ul class="links">
+      <li class="hover-me wow fadeInDown" data-wow-duration="2s" data-wow-delay="2.5s"><a href="#projets">Projets</a></li>
+      <li class="hover-me wow fadeInDown" data-wow-duration="2s" data-wow-delay="2.6s"><a href="#competences">Compétences</a></li>
+      <li class="hover-me wow fadeInDown" data-wow-duration="2s" data-wow-delay="2.7s"><a href="#parcours">Parcours</a></li>
+      <li class="hover-me wow fadeInDown" data-wow-duration="2s" data-wow-delay="2.8s"><a href="#contact">Contact</a></li>
     </ul>
-    <label for="nav-toggle" class="icon-burger">
+    <label for="nav-toggle" class="hover-me icon-burger">
       <div class="line"></div>
       <div class="line"></div>
       <div class="line"></div>
@@ -45,15 +47,15 @@
   <section id="accueil">
     <h1 id="slogan" class="hover-me wow fadeInDown" data-wow-duration="3s">Vos projets, ma passion.</h1>
     <a href="#projets">
-      <div class="scrolldown wow fadeIn" data-wow-delay="4s">
+      <div class="hover-me scrolldown wow fadeIn" data-wow-delay="4s">
         <span></span>
         <span></span>
         <span></span>
       </div>
     </a>
     <!-- <div class="binary">
-      <p class="wow fadeInLeft" data-wow-duration="5s" data-wow-delay="3s">ウェブデザイン</p>
-    </div> -->
+        <p class="wow fadeInLeft" data-wow-duration="5s" data-wow-delay="3s">ウェブデザイン</p>
+      </div> -->
     <div class="angle wow fadeIn" data-wow-duration="5s" data-wow-delay="3s">
       <span></span>
       <span></span>
@@ -80,6 +82,7 @@
   </section>
   <script type="text/javascript">
     new WOW().init();
+
     let mouseCursor = document.querySelector(".cursor");
     let hovers = document.querySelectorAll(".hover-me");
 
@@ -96,7 +99,22 @@
     window.addEventListener('mousemove', (e) => {
       mouseCursor.style.left = e.pageX + 'px';
       mouseCursor.style.top = e.pageY + 'px';
-    })
+    });
+
+
+    // let parallax = document.querySelector(".wave-container");
+    // window.addEventListener("scroll", function() {
+    //   let offset = window.pageYOffset;
+    //   parallax.style.backgroundPositionY = offset * 0.5 + "px";
+    // });
+
+    function valueChanged() {
+      if ($('#nav-toggle').is(":checked")) {
+        $("#slogan").fadeOut(600);
+        $(".scrolldown").hide();
+      } else
+        $("#slogan").show();
+    }
   </script>
 </body>
 
