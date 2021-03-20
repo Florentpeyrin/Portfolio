@@ -30,10 +30,10 @@
   <nav>
     <input id="nav-toggle" type="checkbox" onchange="valueChanged()">
     <div class="hover-me logo wow fadeInDown" data-wow-duration="2s" data-wow-delay="2s">
-      <h4 class="clickable" onclick="window.location.reload();">FP.</h4>
+      <h4 class="logo-icon clickable">FP.</h4>
     </div>
     <ul class="links">
-      <li class="hover-me wow fadeInDown" data-wow-duration="2s" data-wow-delay="2.5s"><a href="#projets">Projets</a></li>
+      <li class="hover-me wow fadeInDown" data-wow-duration="2s" data-wow-delay="2.5s"><a href="#apropos">A propos</a></li>
       <li class="hover-me wow fadeInDown" data-wow-duration="2s" data-wow-delay="2.6s"><a href="#competences">Compétences</a></li>
       <li class="hover-me wow fadeInDown" data-wow-duration="2s" data-wow-delay="2.7s"><a href="#parcours">Parcours</a></li>
       <li class="hover-me wow fadeInDown" data-wow-duration="2s" data-wow-delay="2.8s"><a href="#contact">Contact</a></li>
@@ -61,15 +61,25 @@
       <span></span>
     </div>
     <div class="wave-container">
-      <svg class="wave" viewBox="0 0 1519 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="500" width="100%" preserveAspectRatio="none">
+      <svg class="wave" viewBox="0 0 1519 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="80%" width="100%" preserveAspectRatio="none">
         <path fill="#fff" d="M 0 500 C 190.8 500 286.2 420 477 420 L 477 420 L 477 0 L 0 0 Z" stroke-width="0"></path>
         <path fill="#fff" d="M 476 420 C 893.2 420 1101.8 0 1519 0 L 1519 0 L 1519 0 L 476 0 Z" stroke-width="0"></path>
       </svg>
     </div>
     <p class="binary wow fadeIn" data-wow-duration="5s" data-wow-delay="3s">01000110 01010000</p>
   </section>
-  <section id="projets">
-    <h1 class="wow fadeInDown" data-wow-duration="3s">Mes réalisations</h1>
+  <section id="apropos">
+    <div class="apropos-container">
+      <div class="column wow fadeInDown" data-wow-duration="3s">
+        <h1>Qui suis-je ?</h1>
+        <p>Passioné depuis toujours par les nouvelles technologies et plus précisément par l'informatique, j'ai rapidement pris conscience de mon attrait pour le développement web. Suite à mon DUT Informatique, j'ai choisi la voie de la licence
+          professionnelle en alternance. Cette
+          organisation m'a permis d'acquérir de solides connaissances théoriques tout en appliquant mon savoir dans un environnement professionnel et sur des projets concrets.</p>
+      </div>
+      <div class="column">
+        <p>Oui</p>
+      </div>
+    </div>
   </section>
   <section id="competences">
     <h1 class="wow fadeInDown" data-wow-duration="3s">Mes compétences</h1>
@@ -83,8 +93,12 @@
   <script type="text/javascript">
     new WOW().init();
 
-    let mouseCursor = document.querySelector(".cursor");
-    let hovers = document.querySelectorAll(".hover-me");
+    const mouseCursor = document.querySelector(".cursor");
+    const hovers = document.querySelectorAll(".hover-me");
+    const navbarLinks = document.querySelectorAll(".links li");
+    const navbarToggle = document.querySelector("#nav-toggle");
+    const slogan = document.querySelector("#slogan");
+    navbarToggle.checked = false;
 
     hovers.forEach(item => {
       item.addEventListener("mouseover", () => {
@@ -95,18 +109,19 @@
       });
     });
 
+    navbarLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        if (navbarToggle.checked) {
+          navbarToggle.checked = false;
+          $("#slogan").show();
+        }
+      });
+    });
 
     window.addEventListener('mousemove', (e) => {
       mouseCursor.style.left = e.pageX + 'px';
       mouseCursor.style.top = e.pageY + 'px';
     });
-
-
-    // let parallax = document.querySelector(".wave-container");
-    // window.addEventListener("scroll", function() {
-    //   let offset = window.pageYOffset;
-    //   parallax.style.backgroundPositionY = offset * 0.5 + "px";
-    // });
 
     function valueChanged() {
       if ($('#nav-toggle').is(":checked")) {
