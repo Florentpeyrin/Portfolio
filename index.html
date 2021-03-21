@@ -45,24 +45,14 @@
     </label>
   </nav>
   <section id="accueil">
-    <h1 id="slogan" class="hover-me wow fadeInDown" data-wow-duration="3s">Vos projets, ma passion.</h1>
-    <!-- <div class="binary">
-        <p class="wow fadeInLeft" data-wow-duration="5s" data-wow-delay="3s">ウェブデザイン</p>
-      </div> -->
+    <h1 id="slogan" class="hover-me wow fadeInDown" data-wow-duration="3s"><span class="stroke">Vos projets,</span><span> ma passion.</span></h1>
     <div class="angle wow fadeIn" data-wow-duration="5s" data-wow-delay="3s">
       <span></span>
       <span></span>
     </div>
-    <div class="wave-container">
-      <!-- <svg class="wave" viewBox="0 0 1519 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="80%" width="100%" preserveAspectRatio="xMinYMin meet">
-        <path fill="#fff" d="M 0 500 C 190.8 500 286.2 420 477 420 L 477 420 L 477 0 L 0 0 Z" stroke-width="0"></path>
-        <path fill="#fff" d="M 476 420 C 893.2 420 1101.8 0 1519 0 L 1519 0 L 1519 0 L 476 0 Z" stroke-width="0"></path>
-      </svg> -->
-      <svg class="wave" viewBox="0 0 1519 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="90%" width="100%" preserveAspectRatio="none">
-        <path fill="#fff" d="M 0 500 C 240.89999999999998 500 562.1 252 803 252 L 803 252 L 803 0 L 0 0 Z" stroke-width="0"></path>
-        <path fill="#fff" d="M 802 252 C 1017.1 252 1303.9 115 1519 115 L 1519 115 L 1519 0 L 802 0 Z" stroke-width="0"></path>
-      </svg>
-    </div>
+    <div class="wave-container" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+        <path d="M-29.69,152.06 C166.69,136.30 349.20,-49.87 500.00,49.85 L500.00,149.60 L-55.08,226.86 Z" style="stroke: none; fill: #141414;"></path>
+      </svg></div>
   </section>
   <section id="apropos">
     <div class="apropos-container">
@@ -73,13 +63,13 @@
             professionnelle en alternance. Cette
             organisation m'a permis d'acquérir de solides connaissances théoriques tout en appliquant mon savoir dans un environnement professionnel et sur des projets concrets.
             </br></br>Aujourd'hui, je désire mettre mes compétences au profit d'entreprises innovatrices et créatives.</p>
-          <a class="button hover-me">Me contacter</a>
+          <a class="button hover-me" target="_blank" href="CV/CV.pdf">Télécharger mon CV</a>
         </div>
       </div>
       <div class="column">
         <h2 class="qualite stroke hover-me wow fadeInRight" data-wow-duration="2s" data-wow-delay="1s">Créatif</h2>
-        <h2 class=" qualite stroke hover-me wow fadeInRight" data-wow-duration="2s" data-wow-delay="1.2s">Passionné</h2>
-        <h2 class=" qualite stroke hover-me wow fadeInRight" data-wow-duration="2s" data-wow-delay="1.4s">Curieux</h2>
+        <h2 class="qualite stroke hover-me wow fadeInRight" data-wow-duration="2s" data-wow-delay="1.2s">Passionné</h2>
+        <h2 class="qualite stroke hover-me wow fadeInRight" data-wow-duration="2s" data-wow-delay="1.4s">Curieux</h2>
         <h2 class="qualite stroke hover-me wow fadeInRight" data-wow-duration="2s" data-wow-delay="1.6s">Autonome</h2>
       </div>
     </div>
@@ -128,9 +118,9 @@
 
     function valueChanged() {
       if ($('#nav-toggle').is(":checked")) {
-        $("#slogan").fadeOut(600);
+        $("#slogan").fadeOut(800);
       } else
-        $("#slogan").show();
+        $("#slogan").fadeIn(800);
     }
   </script>
 </body>
